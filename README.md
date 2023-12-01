@@ -87,11 +87,16 @@ http://ec2-3-236-253-241.compute-1.amazonaws.com:8089/
 
 ### API
 
+<p align="justify">A api utilizada neste projeto não foi feita por mim, mas é na verdade uma versão modificada da API de outra pessoa, para mais detalhes acesse o repositório em: https://github.com/RodrigoAnciaes/app_sql_megadados.git</p>
+
+
 <p align="justify">Para utilizar a API, basta acessar a url que será exibida no final da execução do terraform apply. A url será semelhante a apresentada abaixo:</p>
 
 ```bash
 http://ec2-3-236-253-241.compute-1.amazonaws.com:8080/docs
 ```
+
+<p align="justify">Video explicativo da API: Link: https://youtu.be/gqzUmahmUUI</p>
 
 ## Tecnologias
 
