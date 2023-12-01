@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Updating and installing required packages...
+sudo apt-get update
+sudo apt-get install -y python3-pip python3-venv git
+
+# Cloning the repository...
+git clone https://github.com/RodrigoAnciaes/loc_py_test.git /home/ubuntu/loc_py_test
+sudo chown -R ubuntu:ubuntu ~/loc_py_test
+cd /home/ubuntu/loc_py_test
+
+
+# Exporting environment variables...
+echo API_ENDPOINT=${lb_endpoint} > .env
+
+
+# Creating virtual environment...
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+
+locust -f locustfile.py

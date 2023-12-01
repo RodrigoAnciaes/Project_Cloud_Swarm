@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# install the correct dependecies
+sudo apt-get update
+sudo apt-get install -y ec2-instance-connect python3-pip awscli authbind git
+
+# remove the default environment file
+git clone https://github.com/RodrigoAnciaes/app_sql_megadados.git
+cd app_sql_megadados
+
+# install all required Python packages
+pip install -r requirements.txt
+
+cd sql_app
+
+# set the refreshed environment variables
+echo DB_HOST=${db_host} > .env
+echo DB_USERNAME=${db_username} >> .env
+echo DB_PASSWORD=${db_password} >> .env
+echo DB_PORT=${db_port}  >> .env
+echo DB_NAME=${db_name} >> .env
+
+cd ..
+
+# bind the port 80 to the app
+sudo touch /etc/authbind/byport/80
+sudo chmod 500 /etc/authbind/byport/80
+sudo chown ubuntu /etc/authbind/byport/80
+
+# run the app
+authbind --deep uvicorn sql_app.main:app --host 0.0.0.0 --port 80
