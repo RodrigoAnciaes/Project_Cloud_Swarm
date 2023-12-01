@@ -31,7 +31,7 @@ ssh-keygen -t rsa -b 4096 -m pem -f exemplo
 
 ![Alt text](exemplo1.png)
 
-<p align="justify">Após a criação da chave é necessário também criar um arquivo chamado secret.tfvars com as informaçoes desejadas para o banco de dados. O arquivo secret.tfvars deve conter as seguintes variáveis:</p>
+<p align="justify">Após a criação da chave é necessário também criar um arquivo chamado secrets.tfvars com as informaçoes desejadas para o banco de dados. O arquivo secrets.tfvars deve conter as seguintes variáveis:</p>
 
 ```bash
 db_host = "endereco_do_banco" # no nosso caso será 0.0.0.0
@@ -40,7 +40,7 @@ db_password = "senha"
 db_name = "nome_do_banco"
 ```
 
-<p align="justify">Após a criação do arquivo secret.tfvars, é necessário executar o comando abaixo para inicializar o Terraform:</p>
+<p align="justify">Após a criação do arquivo secrets.tfvars, é necessário executar o comando abaixo para inicializar o Terraform:</p>
 
 ```bash
 terraform init
@@ -49,19 +49,19 @@ terraform init
 <p align="justify">Após a inicialização do Terraform, é necessário executar o comando abaixo para criar o plano de execução:</p>
 
 ```bash
-terraform plan -var-file="secret.tfvars"
+terraform plan -var-file="secrets.tfvars"
 ```
 
 <p align="justify">Após a criação do plano de execução, é necessário executar o comando abaixo para executar o plano de execução:</p>
 
 ```bash
-terraform apply -var-file="secret.tfvars"
+terraform apply -var-file="secrets.tfvars"
 ```
 
 <p align="justify">Após a execução do plano de execução, é necessário executar o comando abaixo para destruir a infraestrutura criada:</p>
 
 ```bash
-terraform destroy -var-file="secret.tfvars"
+terraform destroy -var-file="secrets.tfvars"
 ```
 
 <p align="justify">Após a execução do comando acima, a infraestrutura será destruída.</p>
