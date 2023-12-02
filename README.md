@@ -29,7 +29,7 @@ ssh-keygen -t rsa -b 4096 -m pem -f exemplo
 
 <p align="justify">O comando acima irá gerar um par de chaves SSH com o nome de exemplo. O arquivo exemplo será a chave privada e o arquivo exemplo.pub será a chave pública. Após a criação do par de chaves SSH, é necessário atualizar a variável public_key no arquivo ec2.tf com o nome da chave pública criada, conforme apresentado abaixo:</p>
 
-![Alt text](exemplo1.png)
+![Alt text](imgs/exemplo1.png)
 
 <p align="justify">Após a criação da chave é necessário também criar um arquivo chamado secrets.tfvars com as informaçoes desejadas para o banco de dados. O arquivo secrets.tfvars deve conter as seguintes variáveis:</p>
 
@@ -40,7 +40,23 @@ db_password = "senha"
 db_name = "nome_do_banco"
 ```
 
-<p align="justify">Após a criação do arquivo secrets.tfvars, é necessário executar o comando abaixo para inicializar o Terraform:</p>
+<p align="justify">Antes de prosseguirmos para a criação do projeto de fato devemos criar um bucket no S3 para armazenar o arquivo de estado do Terraform. Para isso, basta executar o script terraform <strong>dentro da pasta bucket</strong>, utilizando o comando abaixo:</p>
+
+```bash
+terraform init
+```
+    
+```bash
+terraform plan
+```
+    
+```bash
+terraform apply
+```
+
+<p align="justify">a partir de agora os comandos serão executados novamente na <strong> pasta raiz </strong></p>
+
+<p align="justify">Após a criação do arquivo secrets.tfvars e do bucket s3, é necessário executar o comando abaixo para inicializar o Terraform:</p>
 
 ```bash
 terraform init
@@ -77,11 +93,11 @@ http://ec2-3-236-253-241.compute-1.amazonaws.com:8089/
 ```
 <p align="justify">Após acessar a url, basta preencher os campos conforme apresentado abaixo:</p>
 
-![Alt text](Locust1.png)
+![Alt text](imgs/Locust1.png)
 
 <p align="justify">Após preencher os campos, basta clicar no botão Start Swarming e aguardar o resultado.</p>
 
-![Alt text](Locust2.png)
+![Alt text](imgs/Locust2.png)
 
 <p align="justify">Observação: não colocar mais de 10 usuarios por segundo por preucação, pois o locust costuma ter erros quando se coloca muitos usuarios por segundo no começo da operação.</p>
 
@@ -118,7 +134,7 @@ http://ec2-3-236-253-241.compute-1.amazonaws.com:8080/docs
 
 ## Diagrama da Arquitetura
 
-![Alt text](Diagrama_cloud.png)
+![Alt text](imgs/Diagrama_cloud.png)
 
 ## Explicando as tecnologias utilizadas
 
