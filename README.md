@@ -4,6 +4,10 @@
 
 <p align="justify">Rodrigo Anciães Patelli</p>
 
+## Observação:
+
+<p align="justify"> <strong> Por favor não execute nenhum dos passoas a seguir utilizando a minha conta aws, uma perda de estado no bucket, causou garndes problemas no gerenciamento dos recursos </strong>
+
 ## Descrição do Projeto
 
 <p align="justify">O projeto consiste em criar uma arquitetura de nuvem utilizando a AWS e Terraform. A arquitetura consiste em uma aplicação web que será executada em um servidor EC2, que por sua vez estará dentro de um Auto Scaling Group (ASG) e um Load Balancer (ELB) para distribuir a carga entre os servidores. A aplicação web será uma api RESTful com CRUD simples, que realiza acesso a um banco de dados. O banco de dados será executado em um servidor RDS.</p>
@@ -40,7 +44,7 @@ db_password = "senha"
 db_name = "nome_do_banco"
 ```
 
-<p align="justify">Antes de prosseguirmos para a criação do projeto de fato devemos criar um bucket no S3 para armazenar o arquivo de estado do Terraform. Para isso, basta executar o script terraform <strong>dentro da pasta bucket</strong>, utilizando o comando abaixo:</p>
+<p align="justify">Antes de prosseguirmos para a criação do projeto de fato devemos criar um bucket no S3 para armazenar o arquivo de estado do Terraform. Para isso, podemos cria-lo manualmente, utilizando todas as configurações padrão ou executando o script terraform <strong>dentro da pasta bucket</strong>, utilizando o comando abaixo (não tive como testar este último, perdão):</p>
 
 ```bash
 terraform init
