@@ -44,7 +44,7 @@ db_password = "senha"
 db_name = "nome_do_banco"
 ```
 
-<p align="justify">Antes de prosseguirmos para a criação do projeto de fato devemos criar um bucket no S3 para armazenar o arquivo de estado do Terraform. <strong>Para isso, podemos cria-lo manualmente, utilizando todas as configurações padrão </strong>(https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) ou executando o script terraform <strong>dentro da pasta bucket</strong>, utilizando o comando abaixo (não tive como testar este último, perdão):</p>
+<p align="justify">Antes de prosseguirmos para a criação do projeto de fato devemos criar um bucket no S3 para armazenar o arquivo de estado do Terraform. <strong>Para isso, podemos cria-lo manualmente, utilizando todas as configurações padrão e utilizando os nomes definidos no backend de main.tf </strong>(https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) ou executando o script terraform <strong>dentro da pasta bucket</strong>, utilizando o comando abaixo (não tive como testar este último, perdão):</p>
 
 ```bash
 terraform init
