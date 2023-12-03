@@ -4,7 +4,7 @@
 
 <p align="justify">Rodrigo Anciães Patelli</p>
 
-## Observação:
+## Observação Importante:
 
 <p align="justify"> <strong> Por favor não execute nenhum dos passoas a seguir utilizando a minha conta aws, uma perda de estado no bucket, causou garndes problemas no gerenciamento dos recursos </strong>
 
